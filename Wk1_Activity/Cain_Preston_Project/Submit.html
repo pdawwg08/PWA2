@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Submit</title>
+<link href="style.css" rel="stylesheet" type="text/css"><!--[if lte IE 7]>
+<style>
+.content { margin-right: -1px; } /* this 1px negative margin can be placed on any of the columns in this layout with the same corrective effect. */
+ul.nav a { zoom: 1; }  /* the zoom property gives IE the hasLayout trigger it needs to correct extra whiltespace between the links */
+</style>
+<![endif]-->
+</head>
+
+<body>
+
+<div class="container">
+  <div class="header"><a href="#"><img src="Logo_Trilby.jpg" alt="Insert Logo Here" name="Insert_logo" width="20%" height="90" id="Insert_logo" style="background-color: 3C1410; display: block;" /></a> 
+    <!-- end .header --></div>
+  <div class="content">
+    <h1>Sign Up Below</h1>
+    <p>And start connecting with users from around the world!</p>
+    <label for="first-name">First Name</label><br>
+    <input id="first" type="text" name"first-name" placeholder="Enter your first name"><br>
+    <label for="last-name">Last Name</label><br>
+    <input id="last" type="text" name"last-name" placeholder="Enter your last name"><br>
+    <label for="user-name">User Name</label><br>
+    <input id="userName" type="text" name"user-name" placeholder="Enter your user name" required><br>
+    <label for="email">Email Address</label><br>
+    <input id="email" type="email" name"email" placeholder="Enter your email address" required><br>
+    <label for="confirm">Confirm Address</label><br>
+    <input id="email" type="email" name"confirm" placeholder="Confirm your email" required><br>
+    <label for="password">Password</label><br>
+    <input id="password" type="password" name"password" placeholder="Enter your password" required><br>
+    <label for="confirmPassword">Confirm</label><br>
+    <input id="password" type="password" name"password" placeholder="Confirm your password" required><br>
+    <input name="submit" type="button" id="submit" value="Submit" />
+    <h2>Clearing Method</h2>
+    <p>Because all the columns are floated, this layout uses a clear:both declaration in the .footer rule.  This clearing technique forces the .container to understand where the columns end in order to show any borders or background colors you place on the .container. If your design requires you to remove the .footer from the .container, you'll need to use a different clearing method. The most reliable will be to add a &lt;br class=&quot;clearfloat&quot; /&gt; or &lt;div  class=&quot;clearfloat&quot;&gt;&lt;/div&gt; after your final floated column (but before the .container closes). This will have the same clearing effect.</p>
+    <h3>Logo Replacement</h3>
+    <p>An image placeholder was used in this layout in the .header where you'll likely want to place  a logo. It is recommended that you remove the placeholder and replace it with your own linked logo. </p>
+    <p> Be aware that if you use the Property inspector to navigate to your logo image using the SRC field (instead of removing and replacing the placeholder), you should remove the inline background and display properties. These inline styles are only used to make the logo placeholder show up in browsers for demonstration purposes. </p>
+    <p>To remove the inline styles, make sure your CSS Styles panel is set to Current. Select the image, and in the Properties pane of the CSS Styles panel, right click and delete the display and background properties. (Of course, you can always go directly into the code and delete the inline styles from the image or placeholder there.)</p>
+    <h4>Internet Explorer Conditional Comments</h4>
+    <p>These liquid layouts contain an Internet Explorer Conditional Comment (IECC) to correct two issues. </p>
+    <ol>
+      <li>Browsers are inconsistent in the way they round div sizes in percent-based layouts. If the browser must render a number like 144.5px or 564.5px, they have to round it to the nearest whole number. Safari and Opera round down, Internet Explorer rounds up and Firefox rounds one column up and one down filling the container completely. These rounding issues can cause inconsistencies in some layouts. In this IECC there is a 1px negative margin to fix IE. You may move it to any of the columns (and on either the left or right) to suit your layout needs.</li>
+      <li>The zoom property was added to the anchor within the navigation list since, in some cases, extra white space will be rendered in IE6 and IE7. Zoom gives IE its proprietary hasLayout property to fix this issue.</li>
+    </ol>
+    <h4>Backgrounds</h4>
+    <p>By nature, the background color on any div will only show for the length of the content. This means if you're using a background color or border to create the look of a side column, it won't extend all the way to the footer but will stop when the content ends. If the .content div will always contain more content, you can place a border on the .content div to divide it from the column.</p>
+    <!-- end .content --></div>
+  <div class="footer">
+    <p>This .footer contains the declaration position:relative; to give Internet Explorer 6 hasLayout for the .footer and cause it to clear correctly. If you're not required to support IE6, you may remove it.</p>
+    <!-- end .footer --></div>
+  <!-- end .container --></div>
+</body>
+</html>
