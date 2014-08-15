@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Admin</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="jquery-1.11.1.js"></script>
+<script type="text/javascript" src="actions.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="header"><a href="#"><img src="Logo_Trilby.jpg" alt="Insert Logo Here" name="Insert_logo" width="20%" height="90" id="Insert_logo" style="background-color: 3C1410; display: block;" /></a> 
+    <!-- end .header --></div>
+  <div class="sidebar1">
+    <input name="dashboard" type="button" id="dashboard" value="Dashboard" />
+    <input name="logOut" type="button" id="logOut" value="Sign Out" />
+    <!-- end .sidebar1 --></div>
+  <div class="content">
+    <h1>Welcome User:</h1>
+      <a href="#" class="modalClick">Add +</a>
+    <p>This is your dashboard area... Please choose one of the following options.</p>
+        <ul id="tabs-nav">
+            <li><a href="#projects" id="projects">projects</a></li>
+            <li><a href="#tasks" id="tasks">tasks</a></li>
+            <li><a href="#users" id="users">users</a></li>
+        </ul>
+      <div id="tabs">
+          <p id="projects">This is the projects tab.<button class="projectsbtn">Projects</button></p>
+          <p id="tasks">This is the tasks tab.<button class="tasksbtn">Tasks</button></p>
+          <p id="users">This is the users tab.<button class="usersbtn">Users</button></p>
+      </div>
+    <h2>Clearing Method</h2>
+    <p>Because all the columns are floated, this layout uses a clear:both declaration in the .footer rule.  This clearing technique forces the .container to understand where the columns end in order to show any borders or background colors you place on the .container. If your design requires you to remove the .footer from the .container, you'll need to use a different clearing method. The most reliable will be to add a &lt;br class=&quot;clearfloat&quot; /&gt; or &lt;div  class=&quot;clearfloat&quot;&gt;&lt;/div&gt; after your final floated column (but before the .container closes). This will have the same clearing effect.</p>
+    <h3>Logo Replacement</h3>
+    <p>An image placeholder was used in this layout in the .header where you'll likely want to place  a logo. It is recommended that you remove the placeholder and replace it with your own linked logo. </p>
+    <p> Be aware that if you use the Property inspector to navigate to your logo image using the SRC field (instead of removing and replacing the placeholder), you should remove the inline background and display properties. These inline styles are only used to make the logo placeholder show up in browsers for demonstration purposes. </p>
+    <p>To remove the inline styles, make sure your CSS Styles panel is set to Current. Select the image, and in the Properties pane of the CSS Styles panel, right click and delete the display and background properties. (Of course, you can always go directly into the code and delete the inline styles from the image or placeholder there.)</p>
+    <h4>Internet Explorer Conditional Comments</h4>
+    <p>These liquid layouts contain an Internet Explorer Conditional Comment (IECC) to correct two issues. </p>
+    <ol>
+      <li>Browsers are inconsistent in the way they round div sizes in percent-based layouts. If the browser must render a number like 144.5px or 564.5px, they have to round it to the nearest whole number. Safari and Opera round down, Internet Explorer rounds up and Firefox rounds one column up and one down filling the container completely. These rounding issues can cause inconsistencies in some layouts. In this IECC there is a 1px negative margin to fix IE. You may move it to any of the columns (and on either the left or right) to suit your layout needs.</li>
+      <li>The zoom property was added to the anchor within the navigation list since, in some cases, extra white space will be rendered in IE6 and IE7. Zoom gives IE its proprietary hasLayout property to fix this issue.</li>
+    </ol>
+    <h4>Backgrounds</h4>
+    <p>By nature, the background color on any div will only show for the length of the content. This means if you're using a background color or border to create the look of a side column, it won't extend all the way to the footer but will stop when the content ends. If the .content div will always contain more content, you can place a border on the .content div to divide it from the column.</p>
+    <!-- end .content --></div>
+  <div class="footer">
+    <p>This .footer contains the declaration position:relative; to give Internet Explorer 6 hasLayout for the .footer and cause it to clear correctly. If you're not required to support IE6, you may remove it.</p>
+    <!-- end .footer --></div>
+  <!-- end .container --></div>
+    <div id="overlay">
+        <div id="modal">
+            <span class="close">x</span>
+        <h3 class="header">Add Project</h3>
+        <div id="add">
+            <form id="addForm">
+                <label>Project Name: </label>
+                <input name="projectName" type="text" id="projectName" />
+                </br>
+                <label>Project Description: </label>
+                <input name="projectDescription" type="text" id="projectDescription" />
+                </br>
+                <label>Project Due Date: </label>
+                <input name="projectDueDate" type="text" id="projectDueDate" />
+                </br>
+                <label for="status">Select status:</label>
+                </br>
+    <label class="mystatus">
+        <input type="radio" name="status" id="urgent" />
+        </label>
+    <label class="mystatus">
+        <input type="radio" name="status" id="normal"  />
+        </label>
+    <label class="mystatus">
+        <input type="radio" name="status" id="delayed" />
+        </label>
+    <label class="mystatus">
+        <input type="radio" name="status" id="complete" />
+        </label>
+    <input name="addButton" type="button" id="addButton" value="Add" />
+    </form>
+</body>
+</html>
