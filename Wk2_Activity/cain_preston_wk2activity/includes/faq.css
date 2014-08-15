@@ -1,0 +1,85 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.faq_container {
+	background-image: url(../images/corkboard_tile.jpg);
+	background-repeat: repeat;
+	background-position: 0px 0px;
+	width: 700px;
+	margin-top: 20px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 20px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 5px;
+	padding-left: 0px;
+}
+.faq {
+	background-color: #FFF;
+	background-image: url(../images/note_top.jpg);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	margin-top: 0px;
+	margin-right: 15px;
+	margin-bottom: 35px;
+	margin-left: 15px;
+	padding-top: 35px;
+	padding-right: 15px;
+	padding-bottom: 15px;
+	padding-left: 70px;
+	position: relative;
+}
+.faq_question {
+	font-weight: bold;
+	color: #1f4f71;
+	display: inline-block;
+	margin: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 5px;
+	padding-left: 0px;
+	cursor: help;
+}
+.faq_answer_container {
+	color: #bf572c;
+	padding: 0px;
+	height: 0px;
+	overflow: hidden;
+}
+.faq_answer {
+	font-weight: normal;
+	color: #bf572c;
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	font-family: "Trebuchet MS";
+}
+p {
+	margin: 0px;
+}
+a {
+	color: #bf572c;
+}
+a:hover {
+	color: #000;
+}
+
+.faq .letter_q {
+	width: 40px;
+	height: 50px;
+	position: absolute;
+	top: 20px;
+	left: 25px;
+	background: url(../images/q.png) 0px 0px;
+}
+.faq .letter_a {
+	width: 43px;
+	height: 40px;
+	position: absolute;
+	top: 42px;
+	left: 23px;
+	background: url(../images/a.png) 0px 0px;
+	display: none;}
