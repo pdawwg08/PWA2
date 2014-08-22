@@ -9,6 +9,8 @@
 ul.nav a { zoom: 1; }  /* the zoom property gives IE the hasLayout trigger it needs to correct extra whiltespace between the links */
 </style>
 <![endif]-->
+<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+<script type="text/javascript" src="js/actions.js"></script>
 </head>
 
 <body>
@@ -20,19 +22,19 @@ ul.nav a { zoom: 1; }  /* the zoom property gives IE the hasLayout trigger it ne
     <h1>Sign Up Below</h1>
     <p>And start connecting with users from around the world!</p>
     <label for="first-name">First Name</label><br>
-    <input id="first" type="text" name"first-name" placeholder="Enter your first name"><br>
+    <input id="first" type="text" name="first-name" placeholder="Enter your first name" class="masterTooltip" title="Please enter your first name" /><br>
     <label for="last-name">Last Name</label><br>
-    <input id="last" type="text" name"last-name" placeholder="Enter your last name"><br>
+    <input id="last" type="text" name="last-name" placeholder="Enter your last name" class="masterTooltip" title="Please enter your last name" /><br>
     <label for="user-name">User Name</label><br>
-    <input id="userName" type="text" name"user-name" placeholder="Enter your user name" required><br>
+    <input id="userName" type="text" name="user-name" placeholder="Enter your user name" required class="masterTooltip" title="Please enter your user name" /><br>
     <label for="email">Email Address</label><br>
-    <input id="email" type="email" name"email" placeholder="Enter your email address" required><br>
+    <input id="email" type="email" name="email" placeholder="Enter your email address" required class="masterTooltip" title="Please enter your email address" /><br>
     <label for="confirm">Confirm Address</label><br>
-    <input id="email" type="email" name"confirm" placeholder="Confirm your email" required><br>
+    <input id="email" type="email" name="confirm" placeholder="Confirm your email" required class="masterTooltip" title="Please enter your email address" /><br>
     <label for="password">Password</label><br>
-    <input id="password" type="password" name"password" placeholder="Enter your password" required><br>
+    <input id="password" type="password" name="password" placeholder="Enter your password" required class="masterTooltip" title="Please enter your password" /><br>
     <label for="confirmPassword">Confirm</label><br>
-    <input id="password" type="password" name"password" placeholder="Confirm your password" required><br>
+    <input id="password" type="password" name="password" placeholder="Confirm your password" required class="masterTooltip" title="Please enter password" /><br>
     <input name="submit" type="button" id="submit" value="Submit" />
     <h2>Clearing Method</h2>
     <p>Because all the columns are floated, this layout uses a clear:both declaration in the .footer rule.  This clearing technique forces the .container to understand where the columns end in order to show any borders or background colors you place on the .container. If your design requires you to remove the .footer from the .container, you'll need to use a different clearing method. The most reliable will be to add a &lt;br class=&quot;clearfloat&quot; /&gt; or &lt;div  class=&quot;clearfloat&quot;&gt;&lt;/div&gt; after your final floated column (but before the .container closes). This will have the same clearing effect.</p>
