@@ -9,6 +9,8 @@
 ul.nav a { zoom: 1; }  /* the zoom property gives IE the hasLayout trigger it needs to correct extra whiltespace between the links */
 </style>
 <![endif]-->
+<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+<script type="text/javascript" src="js/actions.js"></script>
 </head>
 
 <body>
@@ -18,14 +20,14 @@ ul.nav a { zoom: 1; }  /* the zoom property gives IE the hasLayout trigger it ne
     <!-- end .header --></div>
   <div class="sidebar1">
     <form id="loginform">
-    <label>Username: </label><input name="signinButton" type="text" id="user"/><br>
-    <label>Password: </label><input name="signinButton" type="password" id="pass" /><br>
+    <label>Username: </label><input name="signinButton" type="text" id="user" class="masterTooltip" title="Please enter a Username" required /><br>
+    <label>Password: </label><input name="signinButton" type="password" id="pass" class="masterTooltip" title="Please enter a Password" required /><br>
     <input name="signinButton" type="button" id="signinButton" value="Sign In" />
     </form>
     <h2>Join Now!</h2>
     <p>Text to convince people to join now!</p>
     <p>Information about what you can do on the site</p>
-    <input name="regbtn" type="button" id="register" value="Sign Up" />
+    <input name="regbtn" type="button" id="register" value="Sign Up" class="masterTooltip" title="Join Today!" />
     <!-- end .sidebar1 --></div>
   <div class="content">
     <h1>Instructions</h1>

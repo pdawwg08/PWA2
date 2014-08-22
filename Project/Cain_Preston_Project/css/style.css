@@ -139,6 +139,17 @@ input[type=radio] + img{
 input[type=radio]:checked + img{
     border: 2px solid #f00;
 }
+
+.tooltip {
+    display: none;
+    position:absolute;
+    border: 1px solid #333;
+    background-color: #000000;
+    border-radius: 5px;
+    padding: 10px;
+    color: #fff;
+    font-size: 12px Arial;
+}
 /* ~~ The footer ~~ */
 .footer {
 	padding: 10px 0;
