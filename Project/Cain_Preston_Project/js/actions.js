@@ -44,9 +44,6 @@ $('.close').on('click', function(event){
         .fadeOut();
 });
 
-
-});
-
 $('.masterTooltip').hover(function(){
     var title = $(this).attr('title');
     $(this).data('tipText',title).removeAttr('title');
@@ -62,4 +59,28 @@ $('.masterTooltip').hover(function(){
     var mousey = e.pageX + 10;
     $('tooltip')
     .css({ top: mousey, left: mousex })
+});
+    
+    $('#signinButton').click(function(){
+        var user = $('#user').val();
+        var pass = $('#pass').val();
+        console.log("This notifies you if the password is working");
+    });
+    $.ajax({
+        url:'xhr/login.php',
+        type: 'post',
+        dataType: 'json',
+        data: {
+            username: user,
+            password: pass
+        },
+        success:function(response){
+           console.log("Test User");
+            if (response.error){
+                alert(response.error);
+            }else{
+                window.location.assign('admin.html')
+            }
+        }
+    });
 });
