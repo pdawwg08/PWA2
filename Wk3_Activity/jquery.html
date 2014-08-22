@@ -1,0 +1,51 @@
+<<span>html lang="en"></span>
+
+<head>
+
+<meta charset="utf-8">
+
+<title>jQuery.getJSON demo</title>
+<style>
+img {
+height: <span>100px;</span>
+float: left;
+}
+</style>
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+<div id="images"></div>
+<script>
+(function() {
+var flickerAPI = "<a href="<a href=">http://api.flickr.com/services/feeds/photos_public...</a>"><a href="http://api.flickr.com/services/feeds/photos_public...">http://api.flickr.com/services/feeds/photos_public...</a>
+// sets the flickerAPI value to the link
+$.getJSON( flickerAPI, {
+// beginning of getJSON function
+tags: "mount rainier",
+// searches for photos of mount rainier
+tagmode: "any",
+// looks at any tags
+format: "json"
+// sets the type of data to return
+})
+//closes getJSON
+.done(function( data ) {
+// when done getting the json code start function to use the data
+$.each( data.items, function( i, item ) {
+// for each item in data do this function
+$( "<img>" ).attr( "src", item.media.m ).appendTo( "#images" );
+// make new <img> tags and set the src to the one on flickr and add this to the div with the id of images
+if ( i === 3 ) {
+// repeat until the element numbered 3
+return false;
+// then finish the each function
+}
+// close the if
+});
+// close the each
+});
+// close the done function
+})();
+</script>
+</body>
+</html>
