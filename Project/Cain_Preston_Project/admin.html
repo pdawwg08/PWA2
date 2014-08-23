@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <title>Admin</title>
 <link href="css/style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+<script type="text/javascript" src="js/actions.js"></script>
 </head>
 
 <body>
@@ -15,8 +17,18 @@
     <input name="logOut" type="button" id="logOut" value="Sign Out" />
     <!-- end .sidebar1 --></div>
   <div class="content">
-    <h1>Welcome User:</h1>
+    <h1 class="userid">Welcome User:</h1>
     <p>This is your dashboard area... Please choose one of the following options.</p>
+        <ul id="tabs-nav">
+            <li><a href="#projects" id="projects">projects</a></li>
+            <li><a href="#tasks" id="tasks">tasks</a></li>
+            <li><a href="#users" id="users">users</a></li>
+        </ul>
+      <div id="tabs">
+          <p id="projects">This is the projects tab.<button class="projectsbtn">Projects</button></p>
+          <p id="tasks">This is the tasks tab.<button class="tasksbtn">Tasks</button></p>
+          <p id="users">This is the users tab.<button class="usersbtn">Users</button></p>
+      </div>
     <h2>Clearing Method</h2>
     <p>Because all the columns are floated, this layout uses a clear:both declaration in the .footer rule.  This clearing technique forces the .container to understand where the columns end in order to show any borders or background colors you place on the .container. If your design requires you to remove the .footer from the .container, you'll need to use a different clearing method. The most reliable will be to add a &lt;br class=&quot;clearfloat&quot; /&gt; or &lt;div  class=&quot;clearfloat&quot;&gt;&lt;/div&gt; after your final floated column (but before the .container closes). This will have the same clearing effect.</p>
     <h3>Logo Replacement</h3>
