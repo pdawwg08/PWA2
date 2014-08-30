@@ -212,7 +212,7 @@ $(".mydatepicker").datepicker();
 $("#sortable").sortable();
 $("#sortable").disableSelection();
 
-$("input[type=submit], button")
+$("input[type=submit], input[type=button], button")
 .button()
 .click(function(event){
     event.preventDefault();
