@@ -44,7 +44,13 @@ $('.close').on('click', function(event){
         .find('#modal')
         .fadeOut();
 });
-
+$('.editclose').on('click', function(event){
+    event.preventDefault();
+    $('#editor')
+        .fadeOut()
+        .find('#editmodal')
+        .fadeOut();
+});
 $('.masterTooltip').hover(function(){
     var title = $(this).attr('title');
     $(this).data('tipText',title).removeAttr('title');
@@ -168,6 +174,35 @@ $('.masterTooltip').hover(function(){
     });
     
     
+    $('#editButton').on('click', function(){
+        var projName = $('#projectName').val(),
+            projDesc = $('#projectDescription').val(),
+            projDue = $('#projectDueDate').val(),
+            status = $('input[name = "status"]:checked').prop("value");
+        var pid = $(this).parent().find(".projectid").val();
+        $.ajax({
+            url: "xhr/update_project.php",
+            type: "post",
+            dataType: "json",
+            data: {
+                projectName: projName,
+                projectDescription: projDesc,
+                dueDate: projDue,
+                status: status,
+                projectID: pid
+            },
+            success: function(response){
+                console.log('Testing for success');
+                if(response.error){
+                    alert(response.error);
+                }else{
+                    window.location.assign("projects.html");
+                };
+            }
+        });
+    });
+    
+    
     var projects = function(){
         $.ajax({
             url: 'xhr/get_projects.php',
@@ -179,14 +214,15 @@ $('.masterTooltip').hover(function(){
                 }else{
                     for(var i=0, j=response.projects.length; i < j; i++){
                         var result = response.projects[i];
-                        $(".projects").append("<div style='border:1px solid black' class='ui-state-default'>" +" <input class='projectid' type='hidden' value='" + result.id + "'>" + "Project Name: " + result.projectName +"<br>" + "Project Description: " + result.projectDescription + "<br>" + "Project Status: " + result.status + "<br>" + "<button class='deletebtn'>Delete</button>" + "<button class='editbtn'>Edit</button>" +"</div> <br>");
+                        $(".projects").append("<div style='border:1px solid black' class='ui-state-default'>" +" <input class='projectid' type='hidden' value='" + result.id + "' id='"+i+"'>" + "<p class=projectName value='" + result.projectName + "'>Project Name: " + result.projectName +"</p>" + "<p class=projectDescription value='" + result.projectDescription + "'>Project Description: " + result.projectDescription + "</p>" + "<p class=status value='" + result.status + "'>Project Status: " + result.status + "</p>" + "<button class='deletebtn'>Delete</button>" + "<button class='editbtn'>Edit</button>" +"</div> <br>");
                     };
                     $('.deletebtn').on('click', function(){
+                        var pid = $(this).parent().find(".projectid").val();
                         console.log('test delete');
                         $.ajax({
                             url: 'xhr/delete_project.php',
                             data: {
-                                projectID: result.id
+                                projectID: pid
                             },
                             type: "post",
                             dataType: "json",
@@ -199,6 +235,36 @@ $('.masterTooltip').hover(function(){
                                 };
                             }
                          });
+                    });
+                    
+                    $('.editbtn').on('click', function(event){
+                        console.log("Editor was clicked");
+                        event.preventDefault();
+                        var currentId= $(this).parent().find(".projectid").attr("id")
+                        console.log(currentId);
+                        
+                        $.ajax({
+                            url: 'xhr/get_projects.php',
+                            type: 'get',
+                            dataType: 'json',
+                            success: function(response){
+                                if(response.error){
+                                    console.log(response.error);
+                                }else{
+                                    var result = response.projects[currentId];
+                                    $("#editprojectName").val(result.projectName);
+                                    $("#editprojectDescription").val(result.projectDescription);
+                                    $("#editprojectDueDate").val(result.dueDate);
+                                    $("#edit"+result.status).val([result.status])
+                                    $("#changeForm").append("<input class='projectid' type='hidden' value='" + result.id + "'>")
+                                }
+                            }
+                        });
+                        
+                        $('#editor')
+                            .fadeIn()
+                            .find('#editmodal')
+                            .fadeIn();
                     });
                 }
             }
