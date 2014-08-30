@@ -179,7 +179,7 @@ $('.masterTooltip').hover(function(){
                 }else{
                     for(var i=0, j=response.projects.length; i < j; i++){
                         var result = response.projects[i];
-                        $(".projects").append("<div style='border:1px solid black'>" +" <input class='projectid' type='hidden' value='" + result.id + "'>" + "Project Name: " + result.projectName +"<br>" + "Project Description: " + result.projectDescription + "<br>" + "Project Status: " + result.status + "<br>" + "<button class='deletebtn'>Delete</button>" + "<button class='editbtn'>Edit</button>" +"</div> <br>");
+                        $(".projects").append("<div style='border:1px solid black' class='ui-state-default'>" +" <input class='projectid' type='hidden' value='" + result.id + "'>" + "Project Name: " + result.projectName +"<br>" + "Project Description: " + result.projectDescription + "<br>" + "Project Status: " + result.status + "<br>" + "<button class='deletebtn'>Delete</button>" + "<button class='editbtn'>Edit</button>" +"</div> <br>");
                     };
                     $('.deletebtn').on('click', function(){
                         console.log('test delete');
@@ -207,8 +207,16 @@ $('.masterTooltip').hover(function(){
 
 projects();
     
-                            
+$(".mydatepicker").datepicker();
     
+$("#sortable").sortable();
+$("#sortable").disableSelection();
+
+$("input[type=submit], button")
+.button()
+.click(function(event){
+    event.preventDefault();
+});
     
     
 });

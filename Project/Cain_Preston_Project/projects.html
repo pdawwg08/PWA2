@@ -5,13 +5,15 @@
 <title>Admin</title>
 <link href="css/style.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="js/actions.js"></script>
+<link rel="stylesheet" href="css/jquery-ui.css">
 </head>
 
 <body>
 
 <div class="container">
-  <div class="header"><a href="#"><img src="images/Logo_Trilby.jpg" alt="Insert Logo Here" name="Insert_logo" width="20%" height="90" id="Insert_logo" style="background-color: 3C1410; display: block;" /></a> 
+  <div class="header"><a href="admin.html"><img src="images/Logo_Trilby.jpg" alt="Insert Logo Here" name="Insert_logo" width="20%" height="90" id="Insert_logo" style="background-color: 3C1410; display: block;" /></a> 
     <!-- end .header --></div>
   <div class="sidebar1">
     <input name="dashboard" type="button" id="dashboard" value="Dashboard" />
@@ -22,7 +24,7 @@
         <input name="add" type="button" class="modalClick" value="Add" />
         <div id="projectlist">
             <h2>Current Projects</h2>
-            <div class="projects">
+            <div class="projects" id="sortable">
             </div>
         </div>
     <h2>Clearing Method</h2>
@@ -57,7 +59,7 @@
                 <input name="projectDescription" type="text" id="projectDescription" class="masterTooltip" title="Please enter a Project Description" />
                 </br>
                 <label>Project Due Date: </label>
-                <input name="projectDueDate" type="text" id="projectDueDate" class="masterTooltip" title="Please enter a Project Due Date" />
+                <input name="projectDueDate" type="text" id="projectDueDate" class="mydatepicker" />
                 </br>
                 <label for="status">Select status:</label>
                 </br>
